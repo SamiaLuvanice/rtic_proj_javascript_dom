@@ -1,68 +1,151 @@
+/* Reset básico */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
-    font-family: sans-serif;
-    background-color: #f0f4f8;
-    padding: 20px;
+  font-family: 'Quicksand', sans-serif;
+  background-color: #1e1b2e;
+  padding: 20px;
+  color: #fefefe;
 }
 
 .container {
-    max-width: 600px;
-    margin: auto;
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: auto;
+  background: #2a273f;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
+}
+
+h1, h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #fefefe;
+}
+
+.form {
+  margin-bottom: 30px;
 }
 
 .emoji-selector {
-    display: flex;
-    gap: 10px;
-    margin: 10px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 10px 0;
+  justify-content: center;
 }
 
 .emoji {
-    font-size: 24px;
-    padding: 10px;
-    cursor: pointer;
-    border: 2px solid transparent;
-    border-radius: 5px;
+  font-size: 26px;
+  padding: 10px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  border-radius: 6px;
+  background-color: transparent;
+  transition: transform 0.2s, background-color 0.3s;
+}
+
+.emoji:hover {
+  transform: scale(1.1);
+  background-color: #3a3750;
 }
 
 .emoji.selected {
-    border-color: #ec6301;
-    background-color: #e7f1ff;
+  background-color: #f6a5c0;
+  border-color: #f6a5c0;
+  color: #2a273f;
 }
 
 textarea {
-    width: 96%;
-    height: 60px;
-    margin-bottom: 10px;
-    padding: 10px;
-    resize: none;
+  width: 100%;
+  height: 60px;
+  margin-bottom: 10px;
+  padding: 10px;
+  resize: none;
+  font-size: 16px;
+  background-color: #1e1b2e;
+  color: #fefefe;
+  border: 1px solid #555;
+  border-radius: 5px;
 }
 
 #saveBtn {
-    padding: 10px 20px;
-    background: #ec6301;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+  width: 100%;
+  padding: 12px;
+  background: #ffb997;
+  color: #1e1b2e;
+  font-weight: bold;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#saveBtn:hover {
+  background: #f6a5c0;
+  color: #1e1b2e;
 }
 
 .diary-entry {
-    background-color: #f9f9f9;
-    border-left: 4px solid #ec6301;
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 5px;
+  background: #3a3750;
+  border-left: 4px solid #ffb997;
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  font-size: 15px;
 }
 
 .removeBtn {
-  margin-top: 5px;
+  margin-top: 10px;
   padding: 5px 10px;
-  background-color: #ff4d4d;
+  background-color: #f6a5c0;
   border: none;
-  border-radius: 3px;
-  color: white;
+  border-radius: 4px;
+  color: #2a273f;
+  font-size: 14px;
   cursor: pointer;
+  transition: background 0.3s;
+}
+
+.removeBtn:hover {
+  background-color: #ffb997;
+}
+
+/* Responsivo para mobile */
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+
+  .container {
+    padding: 15px;
+  }
+
+  .emoji {
+    font-size: 22px;
+    padding: 8px;
+  }
+
+  textarea {
+    font-size: 14px;
+  }
+
+  #saveBtn {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .diary-entry {
+    font-size: 14px;
+  }
+
+  .removeBtn {
+    font-size: 12px;
+    padding: 4px 8px;
+  }
 }
