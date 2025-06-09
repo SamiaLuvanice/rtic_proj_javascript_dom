@@ -1,0 +1,58 @@
+body {
+    font-family: sans-serif;
+    background-color: #f0f4f8;
+    padding: 20px;
+}
+
+.container {
+    max-width: 600px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.emoji-selector {
+    display: flex;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+.emoji {
+    font-size: 24px;
+    padding: 10px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    border-radius: 5px;
+}
+
+.emoji.selected {
+    border-color: #ec6301;
+    background-color: #e7f1ff;
+}
+
+textarea {
+    width: 96%;
+    height: 60px;
+    margin-bottom: 10px;
+    padding: 10px;
+    resize: none;
+}
+
+#saveBtn {
+    padding: 10px 20px;
+    background: #ec6301;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.diary-entry {
+    background-color: #f9f9f9;
+    border-left: 4px solid #ec6301;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
