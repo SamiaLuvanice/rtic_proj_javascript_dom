@@ -56,3 +56,13 @@ textarea {
     margin-bottom: 10px;
     border-radius: 5px;
 }
+
+.removeBtn {
+  margin-top: 5px;
+  padding: 5px 10px;
+  background-color: #ff4d4d;
+  border: none;
+  border-radius: 3px;
+  color: white;
+  cursor: pointer;
+}
