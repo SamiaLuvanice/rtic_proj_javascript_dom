@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Diário do Humor com Emojis</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Diário do Humor 📝</h1>
+    
+    <div class="form">
+      <label>Como você está se sentindo hoje?</label>
+      <div class="emoji-selector">
+        <button class="emoji">😀</button>
+        <button class="emoji">😐</button>
+        <button class="emoji">😢</button>
+        <button class="emoji">😠</button>
+        <button class="emoji">😍</button>
+      </div>
+
+      <textarea id="note" placeholder="Escreva algo sobre seu dia..."></textarea>
+      <button id="saveBtn">Salvar Humor</button>
+    </div>
+
+    <h2>Entradas do Diário</h2>
+    <div id="diaryEntries"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
