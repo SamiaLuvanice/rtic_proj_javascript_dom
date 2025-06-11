@@ -1,34 +1,61 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Diário do Humor com Emojis</title>
+  <title>MoodNotes 📝</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
 </head>
+
 <body>
   <div class="container">
     <h1>MoodNotes 📝</h1>
-    
-    <div class="form">
-      <label>Como você está se sentindo hoje?</label>
+    <p id="greeting"></p> <!-- Saudação personalizada -->
+
+    <section class="form">
+      <label for="note">Iaê, como você está se sentindo hoje?</label>
+
+      <!-- Campo de data -->
+      <label for="date">Escolha a data:</label>
+      <input type="date" id="moodDate" />
+
       <div class="emoji-selector">
-        <button class="emoji">😀</button>
-        <button class="emoji">😐</button>
-        <button class="emoji">😢</button>
-        <button class="emoji">😠</button>
-        <button class="emoji">😍</button>
+        <button class="emoji" aria-label="Feliz">😀</button>
+        <button class="emoji" aria-label="Neutro">😐</button>
+        <button class="emoji" aria-label="Triste">😢</button>
+        <button class="emoji" aria-label="Bravo">😠</button>
+        <button class="emoji" aria-label="Apaixonado">😍</button>
       </div>
 
-      <textarea id="note" placeholder="Escreva algo sobre seu dia..."></textarea>
-      <button id="saveBtn">Salvar Humor</button>
-    </div>
+      <textarea id="note" placeholder="Compartilhe um pouco sobre seu dia..."></textarea>
+      <button id="saveBtn">Salvar Mood</button>
+    </section>
 
-    <h2>Entradas do Diário</h2>
-    <div id="diaryEntries"></div>
+
+    <section>
+      <h2>Resumo de moods</h2>
+      <div id="emojiSummary" class="emoji-summary"></div>
+    </section>
+
+    <section>
+      <h2>Notas diárias</h2>
+      <div id="diaryEntries"></div>
+    </section>
   </div>
+
+  <footer>
+    <p>
+      Feito com ❤️ por
+      <a href="https://github.com/SamiaLuvanice" target="_blank" rel="noopener noreferrer">
+        Sâmia Luvanice
+      </a>
+    </p>
+  </footer>
+
 
   <script src="script.js"></script>
 </body>
+
 </html>
