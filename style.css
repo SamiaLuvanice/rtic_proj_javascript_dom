@@ -16,14 +16,23 @@ body {
   padding: 20px;
 }
 
+.wrapper {
+  display: flex;
+  justify-content: center;     
+  align-items: stretch;        
+  padding: 20px;
+}
+
 .container {
-  background: #2a273f;        /* Caixa do conteúdo central */
+  background: #2a273f;
   border-radius: 16px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
-  margin: auto;
-  max-width: 600px;
+  flex: 1 1 400px;              /* flex-grow: 1; flex-shrink: 1; flex-basis: 400px */
+  min-width: 320px;
+  max-width: 600px;  
   padding: 24px;
 }
+
 
 /* Títulos */
 

@@ -10,39 +10,41 @@
 </head>
 
 <body>
-  <div class="container">
-    <h1>MoodNotes 📝</h1>
-    <p id="greeting"></p> <!-- Saudação personalizada -->
+  <div class="wrapper">
+    <div class="container">
+      <h1>MoodNotes 📝</h1>
+      <p id="greeting"></p> <!-- Saudação personalizada -->
 
-    <section class="form">
-      <label for="note">Iaê, como você está se sentindo hoje?</label>
+      <section class="form">
+        <label for="note">Iaê, como você está se sentindo hoje?</label>
 
-      <!-- Campo de data -->
-      <label for="date">Escolha a data:</label>
-      <input type="date" id="moodDate" />
+        <!-- Campo de data -->
+        <label for="date">Escolha a data:</label>
+        <input type="date" id="moodDate" />
 
-      <div class="emoji-selector">
-        <button class="emoji" aria-label="Feliz">😀</button>
-        <button class="emoji" aria-label="Neutro">😐</button>
-        <button class="emoji" aria-label="Triste">😢</button>
-        <button class="emoji" aria-label="Bravo">😠</button>
-        <button class="emoji" aria-label="Apaixonado">😍</button>
-      </div>
+        <div class="emoji-selector">
+          <button class="emoji" aria-label="Feliz">😀</button>
+          <button class="emoji" aria-label="Neutro">😐</button>
+          <button class="emoji" aria-label="Triste">😢</button>
+          <button class="emoji" aria-label="Bravo">😠</button>
+          <button class="emoji" aria-label="Apaixonado">😍</button>
+        </div>
 
-      <textarea id="note" placeholder=" Me conte o motivo do seu humor de hoje..."></textarea>
-      <button id="saveBtn">Salvar Mood</button>
-    </section>
+        <textarea id="note" placeholder=" Me conte o motivo do seu humor de hoje..."></textarea>
+        <button id="saveBtn">Salvar Mood</button>
+      </section>
 
 
-    <section>
-      <h2>Resumo de moods</h2>
-      <div id="emojiSummary" class="emoji-summary"></div>
-    </section>
+      <section>
+        <h2>Resumo de moods</h2>
+        <div id="emojiSummary" class="emoji-summary"></div>
+      </section>
 
-    <section>
-      <h2>Notas diárias</h2>
-      <div id="diaryEntries"></div>
-    </section>
+      <section>
+        <h2>Notas diárias</h2>
+        <div id="diaryEntries"></div>
+      </section>
+    </div>
   </div>
 
   <footer>
