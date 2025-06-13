@@ -1,6 +1,4 @@
-// =====================
 // INICIALIZAÇÃO DO USUÁRIO
-// =====================
 
 const greetingElement = document.getElementById('greeting');
 
@@ -20,23 +18,19 @@ if (!userName || userName.trim() === "") {
 greetingElement.textContent = `Bem-vindo(a), ${userName || "Visitante"}!`;
 
 
-// =====================
 // VARIÁVEIS GLOBAIS E ELEMENTOS DO DOM
-// =====================
 
 let selectedEmoji = null;
 
 const emojiButtons = document.querySelectorAll('.emoji');
 const saveBtn = document.getElementById('saveBtn');
 const noteField = document.getElementById('note');
-const dateField = document.getElementById('moodDate'); // <- novo campo de data
+const dateField = document.getElementById('moodDate');
 const diaryEntries = document.getElementById('diaryEntries');
 const summaryElement = document.getElementById('emojiSummary');
 
 
-// =====================
 // CARREGAR ENTRADAS SALVAS AO INICIAR
-// =====================
 
 window.addEventListener('DOMContentLoaded', () => {
   const savedEntries = JSON.parse(localStorage.getItem('diarioHumor')) || [];
@@ -45,9 +39,7 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 
-// =====================
 // SELEÇÃO DE EMOJI
-// =====================
 
 emojiButtons.forEach(button => {
   button.addEventListener('click', () => {
@@ -58,14 +50,13 @@ emojiButtons.forEach(button => {
 });
 
 
-// =====================
 // SALVAR NOVA ENTRADA
-// =====================
 
 saveBtn.addEventListener('click', () => {
   const note = noteField.value.trim();
   const rawDate = dateField.value;
 
+  // Validações
   if (!selectedEmoji) {
     alert('Por favor, selecione um emoji para o seu humor.');
     return;
@@ -78,6 +69,7 @@ saveBtn.addEventListener('click', () => {
 
   const formattedDate = formatDate(rawDate);
 
+  // Cria nova entrada
   const newEntry = {
     id: Date.now(),
     date: formattedDate,
@@ -85,13 +77,16 @@ saveBtn.addEventListener('click', () => {
     note: note || 'Sem comentário.'
   };
 
-  const savedEntries = JSON.parse(localStorage.getItem('diarioHumor')) || [];
-  savedEntries.unshift(newEntry);
+  // Salva no localStorage
+  const savedEntries = JSON.parse(localStorage.getItem('diarioHumor')) || []; // converte a string JSON para um array de objetos
+  savedEntries.unshift(newEntry); //adiciona um item no início do array
   localStorage.setItem('diarioHumor', JSON.stringify(savedEntries));
 
+  // Atualiza a interface
   renderEntry(newEntry);
   updateEmojiSummary();
 
+  // Limpa campos
   noteField.value = '';
   dateField.value = '';
   selectedEmoji = null;
@@ -99,22 +94,18 @@ saveBtn.addEventListener('click', () => {
 });
 
 
-// =====================
 // FUNÇÃO: FORMATA A DATA EM dd/mm/aaaa
-// =====================
 
 function formatDate(inputDate) {
   const date = new Date(inputDate);
-  const day = String(date.getDate()).padStart(2, "0");
-  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const day = String(date.getDate()).padStart(2, "0"); //adc zero à esquerda para garantir dois dígitos
+  const month = String(date.getMonth() + 1).padStart(2, "0"); //soma-se +1 para transformar em valores de 1 a 12
   const year = date.getFullYear();
   return `${day}/${month}/${year}`;
 }
 
 
-// =====================
 // FUNÇÃO: RENDERIZAR UMA ENTRADA NO DOM
-// =====================
 
 function renderEntry(entry) {
   const entryDiv = document.createElement('div');
@@ -131,17 +122,15 @@ function renderEntry(entry) {
     removeEntry(entry.id);
   });
 
-  diaryEntries.prepend(entryDiv);
+  diaryEntries.prepend(entryDiv); // insere no topo
 }
 
 
-// =====================
 // FUNÇÃO: REMOVER ENTRADA
-// =====================
 
 function removeEntry(id) {
-  const savedEntries = JSON.parse(localStorage.getItem('diarioHumor')) || [];
-  const updatedEntries = savedEntries.filter(entry => entry.id !== id);
+  const savedEntries = JSON.parse(localStorage.getItem('diarioHumor')) || []; 
+  const updatedEntries = savedEntries.filter(entry => entry.id !== id); //criar um novo array sem a entrada do id recebido
   localStorage.setItem('diarioHumor', JSON.stringify(updatedEntries));
 
   const entryDiv = document.querySelector(`.diary-entry[data-id="${id}"]`);
@@ -153,9 +142,7 @@ function removeEntry(id) {
 }
 
 
-// =====================
 // FUNÇÃO: ATUALIZAR RESUMO DE EMOJIS
-// =====================
 
 function updateEmojiSummary() {
   const savedEntries = JSON.parse(localStorage.getItem('diarioHumor')) || [];
